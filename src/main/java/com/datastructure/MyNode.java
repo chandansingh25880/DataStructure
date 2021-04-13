@@ -1,9 +1,19 @@
 package com.datastructure;
 
-public class MyNode
-{
-    public static void main(String[] args) {
+public class MyNode<k> {
+    private k key;
+    private MyNode next;
 
-        System.out.println("Creating LinkedList for different operaton");
+    public MyNode(k key) {
+        this.key = key;
+        this.next = null;
+    }
+
+    public void setNext(MyNode next) {
+        this.next=next;
+    }
+
+    public MyNode getNext() {
+        return next;
     }
 }
