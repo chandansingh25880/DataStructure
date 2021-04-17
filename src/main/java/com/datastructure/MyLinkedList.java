@@ -53,6 +53,14 @@ public class MyLinkedList {
         this.head = head.getNext();
         return tempNode;
     }
+
+    // pop the element from the  following given condition
+
+        public INode pop() {
+            INode tempNode = this.head;
+            this.head = head.getNext();
+            return tempNode;
+    }
 }
 
 

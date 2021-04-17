@@ -80,4 +80,24 @@ public class LinkedListTest {
 
     }
 
+    /*@Description:- Delete the first element in the given LinkedList
+     * Sequence is : 56->30->70
+     * write the pop method
+     * Final Sequence is : 30->70 */
+    @Test
+    public void givenFirstElement_WhenDeletedShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.add(myFirstNode);
+        mylinkedList.append(mySecondNode);
+        mylinkedList.append(myThirdNode);
+        mylinkedList.pop();
+        mylinkedList.printMyNodes();
+        boolean result = mylinkedList.head.equals(mySecondNode) &&
+                mylinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+
+    }
 }
