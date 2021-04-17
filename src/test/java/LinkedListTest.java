@@ -135,4 +135,26 @@ public class LinkedListTest {
         Assertions.assertTrue(result);
 
     }
+
+    /*@Description:- Insert 40 after 30 to the Linked List sequence of 56->30->70
+     * Search LinkedList to get Node with key value 30
+     * Final Sequence: 56->30->40->70 */
+    @Test
+    public void given4NumbersWhenInsertingSecondAfter30ShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.add(myFirstNode);
+        mylinkedList.append(mySecondNode);
+        mylinkedList.append(myFourthNode);
+        mylinkedList.insert(mylinkedList.search(mySecondNode),myThirdNode);
+        mylinkedList.printMyNodes();
+        boolean result = mylinkedList.head.getKey().equals(myFirstNode.getKey()) &&
+                mylinkedList.head.getNext().getKey().equals(mySecondNode.getKey()) &&
+                mySecondNode.getNext().getKey().equals(myThirdNode.getKey()) &&
+                mylinkedList.tail.getKey().equals(myFourthNode.getKey());
+        Assertions.assertTrue(result);
+    }
 }
