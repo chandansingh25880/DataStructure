@@ -39,4 +39,25 @@ public class LinkedListTest {
         Assertions.assertTrue(result);
 
     }
+
+    /*@Description:- create LinkedList by appending 30 and 70 to 56
+     * Node with data 56 is First Created
+     * Next Append 30 to 56
+     * Finally Append 70 to 30
+     * LinkedList Sequence: 56->30->70 */
+    @Test
+    public void given3NumbersWhenAppendedShouldBeAddedToLast() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.add(myFirstNode);
+        mylinkedList.add(mySecondNode);
+        mylinkedList.add(myThirdNode);
+        mylinkedList.printMyNodes();
+        boolean result = mylinkedList.head.equals(myFirstNode) &&
+                mylinkedList.head.getNext().equals(mySecondNode) &&
+                mylinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+    }
 }
