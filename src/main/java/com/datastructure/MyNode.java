@@ -1,19 +1,33 @@
 package com.datastructure;
 
-public class MyNode<k> {
-    private k key;
-    private MyNode next;
+public class MyNode<K> implements INode<K> {
+    private INode next;
+    private K key;
 
-    public MyNode(k key) {
+    public MyNode(K key){
         this.key = key;
         this.next = null;
     }
 
-    public void setNext(MyNode next) {
-        this.next=next;
+    @Override
+    public K getKey() {
+        return key;
     }
 
-    public MyNode getNext() {
+    @Override
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public INode getNext() {
         return next;
+    }
+    public void setNext(INode next) {
+        this.next = next;
+    }
+
+    @Override
+    public void setNode(INode tempNode) {
+
     }
 }
