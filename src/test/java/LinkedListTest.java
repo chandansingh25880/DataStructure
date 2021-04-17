@@ -60,4 +60,24 @@ public class LinkedListTest {
                 mylinkedList.tail.equals(myThirdNode);
         Assertions.assertTrue(result);
     }
+
+    /*@Description:- To Insert node 30, b/w 56 and 70
+     * Final Sequence: 56->30->70 */
+    @Test
+    public void given3NumbersWhenInsertingSecondNodeInBetweenShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.add(myFirstNode);
+        mylinkedList.append(myThirdNode);
+        mylinkedList.insert(myFirstNode, mySecondNode);
+        mylinkedList.printMyNodes();
+        boolean result = mylinkedList.head.equals(myFirstNode) &&
+                mylinkedList.head.getNext().equals(mySecondNode) &&
+                mylinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+
+    }
+
 }
