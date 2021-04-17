@@ -48,18 +48,30 @@ public class MyLinkedList {
 
     // To Insert the nodes
 
-    public INode insert(INode node , INode newNode) {
+    public INode insert(INode node, INode newNode) {
         INode tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
     }
 
-    // pop the element from the  following given condition
+    // Delete the first element from the  following given condition
 
-        public INode pop() {
-            INode tempNode = this.head;
-            this.head = head.getNext();
-            return tempNode;
+    public INode pop() {
+        INode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
+    // Delete the last element from the given linked list
+
+    public INode popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = tempNode.getNext();
+        return tempNode;
     }
 }
 

@@ -100,4 +100,24 @@ public class LinkedListTest {
         Assertions.assertTrue(result);
 
     }
+
+    /*@Description:- delete the last element in the LinkedList of sequence 56->30->70
+     * write the popLast method
+     * final Sequence is 56->30 */
+    @Test
+    public void givenLastElement_WhenDeletedShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.append(myFirstNode);
+        mylinkedList.append(mySecondNode);
+        mylinkedList.add(myThirdNode);
+        mylinkedList.popLast();
+        mylinkedList.printMyNodes();
+        boolean result = mylinkedList.head.equals(myFirstNode) &&
+                mylinkedList.tail.equals(mySecondNode);
+        Assertions.assertTrue(result);
+    }
+
 }
