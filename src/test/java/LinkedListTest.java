@@ -118,6 +118,21 @@ public class LinkedListTest {
         boolean result = mylinkedList.head.equals(myFirstNode) &&
                 mylinkedList.tail.equals(mySecondNode);
         Assertions.assertTrue(result);
+
     }
 
+    /*@Description:- search LinkedList to find Node with value 30 */
+    @Test
+    public void givenElement_WhenSearchShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedList = new MyLinkedList();
+        mylinkedList.add(myFirstNode);
+        mylinkedList.append(mySecondNode);
+        mylinkedList.append(myThirdNode);
+        boolean result = mylinkedList.search(mySecondNode).getKey().equals(mySecondNode.getKey());
+        Assertions.assertTrue(result);
+
+    }
 }

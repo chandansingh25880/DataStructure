@@ -73,6 +73,18 @@ public class MyLinkedList {
         tempNode = tempNode.getNext();
         return tempNode;
     }
+
+    // Search the element in given linked list
+
+    public <K> INode search(K key) {
+        INode tempNode = head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode == key)
+                return tempNode;
+            tempNode = tempNode.getNext();
+        }
+        return null;
+    }
 }
 
 
